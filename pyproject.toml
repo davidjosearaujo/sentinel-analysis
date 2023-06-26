@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "sentinel-analysis"
+version = "0.1.4"
+description = "This tools allows for a user, by means of specified flags, to process a parquet file containing traffic dumps in search for a set of traffic patterns"
+authors = ["David Araújo <david2araujo5@gmail.com>"]
+readme = "README.md"
+packages = [{include = "sentinel_analysis"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+matplotlib = "^3.7.1"
+pygeoip = "^0.3.2"
+dnspython = "^2.3.0"
+pandas = "^2.0.2"
+scipy = "^1.10.1"
+fastparquet = "^2023.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+sentinel = "sentinel_analysis.main:cli"
